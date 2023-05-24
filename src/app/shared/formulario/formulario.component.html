@@ -1,0 +1,43 @@
+<div class="container mt-4">
+  <form (ngSubmit)="login()" [formGroup]="emailForm" class="forms-sample">
+
+    <div class="row">
+      <div class="col-12">
+          <label class="form-label=">Email</label>
+      </div>
+        <div class="col-12">
+          <input type="email" email pInputText class="largeInput" formControlName="email">
+          <label class="text-danger labelError" *ngIf="emailForm.controls['email'].hasError('required') && emailForm.controls['email'].touched">
+              El campo es requerido
+          </label>
+          <label class="text-danger labelError" *ngIf="emailForm.hasError('email', 'email')">
+            Correo electrónico no válido.
+          </label>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <label class="form-label=">Password</label>
+    </div>
+    <div class="col-12">
+        <input type="password" pInputText class="largeInput" formControlName="password">
+        <label class="text-danger labelError" *ngIf="emailForm.controls['password'].hasError('required') && emailForm.controls['password'].touched">
+            El campo es requerido
+        </label>
+    </div>
+
+
+    <br>
+
+
+
+    <div class="d-flex justify-content-center">
+
+      <button type="submit" class="btn btn-primary">Guardar</button>
+
+    </div>
+  </form>
+
+</div>
+
+
